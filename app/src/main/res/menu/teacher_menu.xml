@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/homepage"
+        android:title="Trang Chủ" />
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/setting"
+        android:title="Cài Đặt" />
+    <item
+        android:id="@+id/action_account"
+        android:icon="@drawable/account"
+        android:title="Tài Khoản" />
+</menu>

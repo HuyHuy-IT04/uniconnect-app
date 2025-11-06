@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">demobtl</string>
+    <string name="app_name">Student</string>
+    <string-array name="doi_tuong_gui">
+        <item>Sinh viên</item>
+        <item>Giảng viên</item>
+    </string-array>
 </resources>

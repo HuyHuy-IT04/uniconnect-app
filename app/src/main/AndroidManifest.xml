@@ -2,24 +2,169 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Với Android 13 trở lên -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <!-- Với Android 12 trở xuống -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_foreground"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Demobtl">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        android:theme="@style/Theme.Demobtl"
+        tools:targetApi="31">
+<!--        <activity-->
+<!--            android:name=".User.Login_Activity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity
+            android:name=".Admin.Admin_Activity"
+            android:exported="true">
+        </activity>
+<!--        <activity-->
+<!--            android:name=".SinhVien.Student_Activity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".GiangVien.Teacher_Activity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.TaiKhoan.QuanLyTaiKhoanActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.TaiKhoan.ChiTietTaiKhoanActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.QLSinhVien.DanhSachSinhVienActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.QLSinhVien.ThemSinhVienActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.QLSinhVien.SuaXoaSinhVienActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+
+<!--        <activity-->
+<!--            android:name=".Admin.QLDanhMuc.QLLop.QuanLyLopActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.QLDanhMuc.QLLop.DanhSachSinhVienTheoLopActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.Setting_admin"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.ThongBao.GuiThongBaoActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.QLMonHoc.MonHocActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.QLGiangVien.GiangVienActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.QLDanhMuc.QLKhoa.KhoaActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".GiangVien.QLLop.LopActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".GiangVien.QLLop.SinhVienActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.QLMonHoc.ThemSinhVienChoMonActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.QLGiangDay.GiangVienActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".Admin.QLGiangDay.ChiTietGiangVien_MonHoc_Activity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".GiangVien.QLMonHoc_Diem.MonHocActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".GiangVien.QLMonHoc_Diem.SinhVienMonHocActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".GiangVien.QLMonHoc_Diem.NhapDiemActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".SinhVien.XemThongBao.XemThongBaoActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".SinhVien.XemThongBao.ChiTietThongBaoActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".SinhVien.XemKetQua.XemKetQuaActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".SinhVien.ThongTinCaNhanActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".SinhVien.Setting_student"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".GiangVien.SettingTeacherActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".GiangVien.ThongTinCaNhanGiangVien"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".GiangVien.XemThongBao.XemThongBaoActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".GiangVien.XemThongBao.ChiTietThongBaoActivity"-->
+<!--            android:exported="true">-->
+<!--        </activity>-->
+        <activity
+            android:name=".Admin.ThongBao.DanhSachThongBaoActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".Admin.ThongBao.SuaThongBaoActivity"
+            android:exported="true">
         </activity>
     </application>
+
 
 </manifest>
