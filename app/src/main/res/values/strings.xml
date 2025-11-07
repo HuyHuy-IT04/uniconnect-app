@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">demobtl</string>
+    <string name="login_title">Login UniApp</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
 </resources>
