@@ -1,7 +1,9 @@
 package com.example.demobtl;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.util.Log;
 
 import com.google.firebase.FirebaseApp;
@@ -9,29 +11,57 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
+
+    // Khai báo các nút UI (Dev 1)
+    private Button btnNavigateToRegister;
+    private Button btnNavigateToLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Khởi tạo Firebase
+        // --- 1. KHỞI TẠO VÀ KIỂM TRA FIREBASE (Logic cũ của bạn) ---
+        // Thường không cần gọi initializeApp nếu tích hợp đúng gradle và google-services.json
+        // Tuy nhiên, để giữ logic cũ, chúng ta giữ lại.
         FirebaseApp.initializeApp(this);
 
-        // Kiểm tra Firebase hoạt động
         if (FirebaseApp.getApps(this).size() > 0) {
             Log.d("FirebaseCheck", "✅ Firebase đã khởi tạo thành công!");
         } else {
             Log.e("FirebaseCheck", "❌ Firebase chưa khởi tạo!");
         }
 
-        // Kiểm tra Firebase Authentication
         FirebaseAuth auth = FirebaseAuth.getInstance();
         if (auth != null) {
             Log.d("FirebaseCheck", "✅ FirebaseAuth sẵn sàng!");
         }
 
-        // Kiểm tra Firebase Realtime Database
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         Log.d("FirebaseCheck", "✅ FirebaseDatabase URL: " + db.getReference().toString());
+        // ------------------------------------------------------------------
+
+
+        // 2. Ánh xạ các nút UI (Dùng ID từ XML)
+        btnNavigateToRegister = findViewById(R.id.btnNavigateToRegister);
+        btnNavigateToLogin = findViewById(R.id.btnNavigateToLogin);
+
+        // 3. Thiết lập sự kiện chuyển hướng Đăng ký
+        btnNavigateToRegister.setOnClickListener(v -> {
+            Log.d(TAG, "Chuyển sang màn hình Đăng ký.");
+            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        });
+
+        // 4. Thiết lập sự kiện chuyển hướng Đăng nhập
+        btnNavigateToLogin.setOnClickListener(v -> {
+            Log.d(TAG, "Chuyển sang màn hình Đăng nhập.");
+            // Chuyển sang LoginActivity
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
+
     }
 }

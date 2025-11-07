@@ -20,6 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- 2. Khai báo RegisterActivity (RẤT QUAN TRỌNG) -->
+        <activity android:name=".RegisterActivity" />
+
+        <!-- 3. Khai báo LoginActivity (RẤT QUAN TRỌNG) -->
+        <activity android:name=".LoginActivity" />
+
+        <!-- 4. Khai báo HomeActivity (RẤT QUAN TRỌNG để chuyển hướng sau Auth) -->
+        <activity android:name=".HomeActivity" />
     </application>
 
 </manifest>
