@@ -1,22 +1,15 @@
 {
   "project_info": {
-    "project_number": "601785547035",
-    "firebase_url": "https://uniconnect-13fe7-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "uniconnect-13fe7",
-    "storage_bucket": "uniconnect-13fe7.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:601785547035:android:4db8453dca68fb7edd7bbe",
         "android_client_info": {
-          "package_name": "com.uniconnect.app"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD5tn0rQvuP5WHgihMRGf6OFit6tNA-GIc"
         }
       ],
       "services": {
