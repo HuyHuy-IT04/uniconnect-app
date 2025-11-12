@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">UniConnect</string>
+
+    <!-- Login -->
+    <string name="welcome">Chào mừng đến UniConnect</string>
+    <string name="email">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="login">Đăng nhập</string>
+    <string name="test_accounts">Tài khoản test</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard">Dashboard</string>
+    <string name="group_chat">Chat nhóm</string>
+    <string name="online_users">Người dùng online</string>
+    <string name="logout">Đăng xuất</string>
+
+    <!-- Chat -->
+    <string name="type_message">Nhập tin nhắn...</string>
+    <string name="send">Gửi</string>
+</resources>

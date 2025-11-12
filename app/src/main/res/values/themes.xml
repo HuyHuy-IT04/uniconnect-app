@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.UniConnect" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="Theme.UniConnect" parent="Base.Theme.UniConnect" />
+</resources>
