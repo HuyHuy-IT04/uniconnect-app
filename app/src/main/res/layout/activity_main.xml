@@ -9,6 +9,19 @@
     android:padding="32dp"
     tools:context=".MainActivity">
 
+    <!-- NÚT CHUYỂN HƯỚNG TỚI THÔNG BÁO (TẠM THỜI CHO DEBUG) -->
+    <Button
+        android:id="@+id/btnNavigateToNotifications"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="KIỂM TRA TÍNH NĂNG THÔNG BÁO"
+        android:padding="10dp"
+        android:backgroundTint="#FF9800"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
     <!-- Tiêu đề lớn: Chào mừng đến với UniConnect -->
     <TextView
         android:id="@+id/tvAppTitle"
@@ -17,10 +30,10 @@
         android:text="Chào mừng đến với UniConnect"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNavigateToNotifications"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="50dp" />
 
     <!-- Mô tả phụ -->
     <TextView

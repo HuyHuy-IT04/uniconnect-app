@@ -28,6 +28,7 @@
 
         <!-- 4. Khai báo HomeActivity (RẤT QUAN TRỌNG để chuyển hướng sau Auth) -->
         <activity android:name=".HomeActivity" />
+        <activity android:name=".NotificationActivity" />
     </application>
 
 </manifest>

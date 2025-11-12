@@ -51,4 +51,11 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-database")
+
+    // --- DEPENDENCIES MỚI ĐƯỢC THÊM ĐỂ KHẮC PHỤC LỖI THÔNG BÁO ---
+    // RecyclerView (Bắt buộc để hiển thị danh sách thông báo)
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    // CardView (Bắt buộc cho item_notification.xml)
+    implementation("androidx.cardview:cardview:1.0.0")
+    // ---------------------------------------------------------------------
 }
