@@ -14,18 +14,17 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    // Khai báo các nút UI (Dev 1)
+    // Khai báo các nút UI
     private Button btnNavigateToRegister;
     private Button btnNavigateToLogin;
+    private Button btnNavigateToNotifications;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // --- 1. KHỞI TẠO VÀ KIỂM TRA FIREBASE (Logic cũ của bạn) ---
-        // Thường không cần gọi initializeApp nếu tích hợp đúng gradle và google-services.json
-        // Tuy nhiên, để giữ logic cũ, chúng ta giữ lại.
+        // --- 1. KHỞI TẠO VÀ KIỂM TRA FIREBASE ---
         FirebaseApp.initializeApp(this);
 
         if (FirebaseApp.getApps(this).size() > 0) {
@@ -47,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         // 2. Ánh xạ các nút UI (Dùng ID từ XML)
         btnNavigateToRegister = findViewById(R.id.btnNavigateToRegister);
         btnNavigateToLogin = findViewById(R.id.btnNavigateToLogin);
+        btnNavigateToNotifications = findViewById(R.id.btnNavigateToNotifications);
 
         // 3. Thiết lập sự kiện chuyển hướng Đăng ký
         btnNavigateToRegister.setOnClickListener(v -> {
@@ -58,10 +58,15 @@ public class MainActivity extends AppCompatActivity {
         // 4. Thiết lập sự kiện chuyển hướng Đăng nhập
         btnNavigateToLogin.setOnClickListener(v -> {
             Log.d(TAG, "Chuyển sang màn hình Đăng nhập.");
-            // Chuyển sang LoginActivity
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
         });
 
+        // 5. Thiết lập sự kiện chuyển hướng THÔNG BÁO
+        btnNavigateToNotifications.setOnClickListener(v -> {
+            Log.d(TAG, "Chuyển sang màn hình Thông báo.");
+            Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
+            startActivity(intent);
+        });
     }
 }
