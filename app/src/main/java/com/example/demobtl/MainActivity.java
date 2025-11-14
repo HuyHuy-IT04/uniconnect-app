@@ -1,37 +1,54 @@
 package com.example.demobtl;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
+import android.app.AlertDialog;
+import android.os.Bundle;
+import android.text.InputType;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    ArrayList<Notice> notices;
+    NoticeAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Khởi tạo Firebase
-        FirebaseApp.initializeApp(this);
+        ListView lv = findViewById(R.id.listView);
+        Button btnAdd = findViewById(R.id.btnAdd);
 
-        // Kiểm tra Firebase hoạt động
-        if (FirebaseApp.getApps(this).size() > 0) {
-            Log.d("FirebaseCheck", "✅ Firebase đã khởi tạo thành công!");
-        } else {
-            Log.e("FirebaseCheck", "❌ Firebase chưa khởi tạo!");
-        }
+        // dữ liệu ảo
+        notices = new ArrayList<>();
+        notices.add(new Notice("Thông báo 1", "Hôm nay nghỉ học"));
+        notices.add(new Notice("Thông báo 2", "Thi giữa kì vào thứ 6"));
 
-        // Kiểm tra Firebase Authentication
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        if (auth != null) {
-            Log.d("FirebaseCheck", "✅ FirebaseAuth sẵn sàng!");
-        }
+        adapter = new NoticeAdapter(this, notices);
+        lv.setAdapter(adapter);
 
-        // Kiểm tra Firebase Realtime Database
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        Log.d("FirebaseCheck", "✅ FirebaseDatabase URL: " + db.getReference().toString());
+        btnAdd.setOnClickListener(v -> showAddDialog());
+    }
+
+    private void showAddDialog() {
+        EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
+        input.setHint("Nhập nội dung thông báo");
+
+        new AlertDialog.Builder(this)
+                .setTitle("Thêm thông báo")
+                .setView(input)
+                .setPositiveButton("Thêm", (d, w) -> {
+                    notices.add(new Notice("Thông báo mới", input.getText().toString()));
+                    adapter.notifyDataSetChanged();
+                })
+                .setNegativeButton("Hủy", null)
+                .show();
     }
 }
+
