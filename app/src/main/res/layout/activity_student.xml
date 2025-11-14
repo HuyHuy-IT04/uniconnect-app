@@ -38,7 +38,7 @@
                 android:id="@+id/userGreeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hi, Trần Duy Hoàng 👋"
+                android:text="Hi, Văn Thanh Lân 👋"
                 android:textSize="22sp"
                 android:textColor="#333333"
                 android:textStyle="bold"

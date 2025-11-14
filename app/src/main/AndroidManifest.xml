@@ -31,6 +31,9 @@
             android:name=".Admin.Admin_Activity"
             android:exported="true">
         </activity>
+        <activity android:name=".GiangVien.Chat.GroupListActivity" />
+        <activity android:name=".GiangVien.Chat.CreateGroupActivity" />
+        <activity android:name=".GiangVien.Chat.ChatRoomActivity" />
 <!--        <activity-->
 <!--            android:name=".SinhVien.Student_Activity"-->
 <!--            android:exported="true">-->
