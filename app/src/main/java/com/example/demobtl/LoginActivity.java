@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.demobtl.students.ChatActivity;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -22,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Initialize Firebase (safe even if already initialized)
         FirebaseApp.initializeApp(this);
         auth = FirebaseAuth.getInstance();
 
@@ -45,10 +45,19 @@ public class LoginActivity extends AppCompatActivity {
         auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
+
                         Toast.makeText(LoginActivity.this, "✅ Login successful!", Toast.LENGTH_SHORT).show();
-                        // After login, go to your existing MainActivity
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                        // ⭐ Redirect to ChatActivity
+                        Intent intent = new Intent(LoginActivity.this, ChatActivity.class);
+
+                        String chatId = "chat_student_" + auth.getCurrentUser().getUid();
+                        intent.putExtra("chatId", chatId);
+                        intent.putExtra("chatName", "Hỗ trợ sinh viên");
+
+                        startActivity(intent);
                         finish();
+
                     } else {
                         Toast.makeText(LoginActivity.this,
                                 "❌ Login failed: " + task.getException().getMessage(),

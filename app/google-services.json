@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "340556220797",
-    "project_id": "demoapp-14320",
-    "storage_bucket": "demoapp-14320.firebasestorage.app"
+    "project_number": "680900022721",
+    "project_id": "unimana-7a762",
+    "storage_bucket": "unimana-7a762.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:340556220797:android:0334da185c5dc61d876414",
+        "mobilesdk_app_id": "1:680900022721:android:81e25094316ff9b3095f40",
         "android_client_info": {
           "package_name": "com.example.demobtl"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDngXlHIogJoXlQuglZOWscWIH68Rr-iDk"
+          "current_key": "AIzaSyDKI_bLX6YQcCFS4s3E6nLroLs9DVxQJjg"
         }
       ],
       "services": {
